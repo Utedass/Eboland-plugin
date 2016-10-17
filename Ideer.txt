@@ -1,0 +1,13 @@
+Idéer till plugins!
+
+* Om man har en kista i sin inventory när man dör, så läggs spelarens inventory i den och placeras på dödsplatsen.
+
+* Eventuellt en dödsruna
+
+* Välkomstmeddelande vid inloggning
+
+* Announcments vid inloggning
+
+* Fixa enchantments
+
+* Teleportstationer?

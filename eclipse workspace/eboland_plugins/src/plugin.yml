@@ -1,0 +1,11 @@
+name: Eboland_plugins
+main: se.cookiez.eboland.Eboland_plugins.Eboland_plugins
+version: 1.0
+commands:
+  reg_chunk:
+    description:        Regenerates a chunk
+    aliases:            [reg_chunk_cc, reg_chunk_wc]
+    usage:              "Usage (add _wc for world coordinates):\n<command> [x] [z]\n<command> [x1] [z1] [x2] [z2]"
+  here:
+    description:        Tells the others where you are
+    usage:              "Usage: <command>"
