@@ -1,13 +1,21 @@
-Idéer till plugins!
+IdÃ©er till plugins!
 
-* Om man har en kista i sin inventory när man dör, så läggs spelarens inventory i den och placeras på dödsplatsen.
+* Om man har en kista i sin inventory nÃ¤r man dÃ¶r, sÃ¥ lÃ¤ggs spelarens inventory i den och placeras pÃ¥ dÃ¶dsplatsen.
 
-* Eventuellt en dödsruna
+* Eventuellt en dÃ¶dsruna
 
-* Välkomstmeddelande vid inloggning
+* VÃ¤lkomstmeddelande vid inloggning
 
 * Announcments vid inloggning
 
 * Fixa enchantments
 
 * Teleportstationer?
+
+* Fixa hungern
+
+* LÃ¤gg till kommando '/latest' eller nÃ¥t liknande som printar en lista med senast inloggade. typ:
+    Utedass     2 minutes ago
+    Markkanen   1 day ago
+    Bingobaerra 3 years ago
+    etc.
