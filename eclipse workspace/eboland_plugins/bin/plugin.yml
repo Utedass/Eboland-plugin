@@ -1,6 +1,7 @@
 name: Eboland_plugins
 main: se.cookiez.eboland.Eboland_plugins.Eboland_plugins
 version: 1.0
+api-version: 1.13
 commands:
   reg_chunk:
     description:        Regenerates a chunk

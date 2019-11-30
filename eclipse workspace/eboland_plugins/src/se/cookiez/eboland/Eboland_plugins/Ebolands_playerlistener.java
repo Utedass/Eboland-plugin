@@ -32,7 +32,7 @@ public class Ebolands_playerlistener implements Listener
 	public void spara_ny_sang(PlayerInteractEvent e)
 	{
 		//Update the spawn location even if it is night
-		if (e.hasBlock() && e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == org.bukkit.Material.BED_BLOCK)
+		if (e.hasBlock() && e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getClickedBlock().getType() == org.bukkit.Material.LEGACY_BED_BLOCK)
 		{			
 			byte bed_data = e.getClickedBlock().getData();
 			Location pillow = e.getClickedBlock().getLocation();

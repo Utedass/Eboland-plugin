@@ -12,8 +12,8 @@ public class Ebolands_blocklistener implements Listener {
 	
 	@EventHandler
 	public void droppa_svamp(BlockBreakEvent e) {
-		if(	e.getBlock().getType() == Material.MYCEL &&
-			e.getPlayer().getItemInHand().getType() == Material.DIAMOND_HOE) {
+		if(	e.getBlock().getType() == Material.MYCELIUM &&
+			e.getPlayer().getInventory().getItemInMainHand().getType() == Material.DIAMOND_HOE) {
 			e.getBlock().setType(Material.AIR);
 			e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), new ItemStack(Material.SPONGE));
 		}	
