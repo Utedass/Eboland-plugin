@@ -1,4 +1,4 @@
-package se.cookiez.eboland.Eboland_plugins;
+package se.eboland.pluginGeneral;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.*;
 import org.bukkit.event.block.*;
 
-public class Ebolands_playerlistener implements Listener
+public class EbolandPlayerListener implements Listener
 {
 
 	@EventHandler

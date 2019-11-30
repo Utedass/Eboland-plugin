@@ -1,4 +1,4 @@
-package se.cookiez.eboland.Eboland_plugins;
+package se.eboland.pluginGeneral;
 
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -8,8 +8,9 @@ import org.bukkit.event.block.*;
 import org.bukkit.event.entity.EntityPortalEnterEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class Ebolands_blocklistener implements Listener {
+public class EbolandBlockListener implements Listener {
 	
+	// Easter egg
 	@EventHandler
 	public void droppa_svamp(BlockBreakEvent e) {
 		if(	e.getBlock().getType() == Material.MYCELIUM &&
@@ -21,8 +22,9 @@ public class Ebolands_blocklistener implements Listener {
 }
 
 
-class Ebolands_katastrofskydd implements Listener {
+class EbolandKatastrofskydd implements Listener {
 	
+	// Håller ghasts borta från overworld
 	@EventHandler
 	public void no_ghasts(EntityPortalEnterEvent e) {
 		if(	e.getEntityType() == EntityType.GHAST) {

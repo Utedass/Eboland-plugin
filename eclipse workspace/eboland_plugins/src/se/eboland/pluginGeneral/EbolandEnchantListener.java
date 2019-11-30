@@ -1,10 +1,10 @@
-package se.cookiez.eboland.Eboland_plugins;
+package se.eboland.pluginGeneral;
 
 import org.bukkit.event.*;
 import org.bukkit.event.enchantment.*;
 
 
-public class Ebolands_enchantlistener implements Listener{
+public class EbolandEnchantListener implements Listener{
 	
 	@EventHandler
 	public void fixa_enchantment_level(PrepareItemEnchantEvent e)

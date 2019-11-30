@@ -1,4 +1,4 @@
-package se.cookiez.eboland.Eboland_plugins;
+package se.eboland.pluginGeneral;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -9,12 +9,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Ebolands_commands implements CommandExecutor {
+public class EbolandCommands implements CommandExecutor {
 	
 	@SuppressWarnings("unused")
-	private Eboland_plugins eboland_instance;
+	private EbolandGeneralPlugin eboland_instance;
 	
-	public Ebolands_commands(Eboland_plugins plugin)
+	public EbolandCommands(EbolandGeneralPlugin plugin)
 	{
 		eboland_instance = plugin;
 	}
