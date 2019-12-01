@@ -1,7 +1,11 @@
 package se.eboland.pluginGeneral;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,8 +13,7 @@ import org.bukkit.event.player.*;
 import org.bukkit.event.block.*;
 
 public class EbolandPlayerListener implements Listener
-{
-
+{	
 	@EventHandler
 	public void dags_att_sova(PlayerBedEnterEvent e) {
 		Bukkit.getServer().broadcastMessage(ChatColor.AQUA + e.getPlayer().getName() + ChatColor.YELLOW + " har lagt sig i en säng och vill sova!");
@@ -22,10 +25,71 @@ public class EbolandPlayerListener implements Listener
 			Bukkit.getServer().broadcastMessage(ChatColor.AQUA + e.getPlayer().getName() + ChatColor.DARK_RED + " har gått ur sängen, vilken " + ChatColor.UNDERLINE + "SVIKARE" + ChatColor.RESET + ChatColor.DARK_RED + "!");
 	}
 	
+	private String timestampToInterval(long t)
+	{
+		t /= 1000;
+		
+		long d = t/(60*60*24);
+		t %= (60*60*24);
+		long h = t/(60*60);
+		t %= (60*60);
+		long m = t/60;
+		t %= 60;
+		long s = t;
+		
+		String message = "nyss";
+
+		if(d == 1)
+			message = "en dag";
+		else if(d != 0)
+			message = d + " dagar";
+		else if(h != 0)
+			message = h + "h " + m + "m " + s + "s";
+		else if(m != 0)
+			message = m + "m " + s + "s";
+		else if(s != 0)
+			message = s + "s";
+		
+		return message;
+	}
+	
 	@EventHandler
 	public void valkommen(PlayerJoinEvent e)
 	{
-		e.getPlayer().sendMessage("Välkommen " + ChatColor.AQUA + e.getPlayer().getName() + ChatColor.RESET + "!");
+		Player p = e.getPlayer();
+
+		long lastPlayed = p.getLastPlayed();
+		long now = System.currentTimeMillis(); 
+		
+		p.sendMessage("Välkommen " + ChatColor.AQUA + p.getName() + ChatColor.RESET + "!");
+		
+		
+		OfflinePlayer[] ops = p.getServer().getOfflinePlayers();
+		if(ops.length != 0)
+		{
+			List<OfflinePlayer> opList = new ArrayList<>();
+			for(OfflinePlayer op : ops)
+			{
+				if(op.getLastPlayed() != 0)
+					opList.add(op);
+			}
+			
+			opList.sort((b,a) -> a.getLastPlayed() < b.getLastPlayed() ? -1 : a.getLastPlayed() == b.getLastPlayed() ? 0 : 1);
+			
+			
+			p.sendMessage("Senast inloggade spelare:");
+			
+			for(int i = Math.min(6, opList.size()-1); i >= 0; i--)
+			{
+				OfflinePlayer op = opList.get(i);
+				p.sendMessage("   " + op.getName() + " loggade in för " + timestampToInterval(now-op.getLastPlayed()) + " sedan");
+				//p.sendMessage("   " + op.getName() + " " + op.getFirstPlayed());
+			}
+		}
+		
+		
+		//p.sendMessage("Ditt senaste besök var för " + timestampToInterval(now-lastPlayed) + " sedan");
+		
 	}
 	
 	@EventHandler
