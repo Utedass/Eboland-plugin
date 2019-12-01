@@ -82,7 +82,7 @@ public class EbolandPlayerListener implements Listener
 			for(int i = Math.min(6, opList.size()-1); i >= 0; i--)
 			{
 				OfflinePlayer op = opList.get(i);
-				p.sendMessage("   " + op.getName() + " loggade in för " + timestampToInterval(now-op.getLastPlayed()) + " sedan");
+				p.sendMessage("   " + ChatColor.GREEN + op.getName() + ChatColor.RESET + " loggade in för " + timestampToInterval(now-op.getLastPlayed()) + " sedan");
 				//p.sendMessage("   " + op.getName() + " " + op.getFirstPlayed());
 			}
 		}
