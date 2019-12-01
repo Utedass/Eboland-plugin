@@ -12,7 +12,7 @@ public final class EbolandGeneralPlugin extends JavaPlugin {
 		this.getServer().getPluginManager().registerEvents(new EbolandPlayerListener(), this);
 		this.getServer().getPluginManager().registerEvents(new EbolandBlockListener(), this);
 		this.getServer().getPluginManager().registerEvents(new EbolandKatastrofskydd(), this);
-		this.getServer().getPluginManager().registerEvents(new EbolandEnchantListener(), this);
+		//this.getServer().getPluginManager().registerEvents(new EbolandEnchantListener(), this);
 		
 		EbolandCommands ec = new EbolandCommands(this);
 		getCommand("reg_chunk").setExecutor(ec);
